@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="header">
+            <h1 class="title">City Weather</h1>
+            <p class="subtitle">Simple, minimal weather lookup</p>
+        </header>
+
+        <div class="layout">
+            <div class="content">
+                <section class="controls">
+                    <form action="" id="form" class="search">
+                        <input type="text" id="input" class="search-input" placeholder="Enter city name">
+                        <button type="submit" class="btn">Get Weather</button>
+                    </form>
+                </section>
+
+                <section id="weatherBox" class="card weather-card">
+                    <div class="weather-head">
+                        <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+                        <div>
+                            <h2 class="card-title">Current Weather</h2>
+                            <p id="location" class="location"></p>
+                        </div>
+                    </div>
+
+                    <p id="weather-description" class="desc"></p>
+                    <div class="row">
+                        <p id="temperature" class="temp"></p>
+                        <p id="humidity" class="hum"></p>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar card">
+                <h3 class="suggest-title">Suggested Cities</h3>
+                <ul id="suggestions" class="suggestions" aria-label="Suggested cities">
+                    <!-- JS will populate suggestions -->
+                </ul>
+            </aside>
+        </div>
+
+        <footer class="footer">&copy; City Weather Dashboard</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
