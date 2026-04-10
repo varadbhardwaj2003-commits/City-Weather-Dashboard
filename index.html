@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <main class="page">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="top-nav">
+        <button id="dropdown-btn" class="glass-btn pill-btn" aria-haspopup="true" aria-expanded="false">
+            Suggested Cities
+            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+        <div id="dropdown-menu" class="glass-card dropdown-menu" aria-hidden="true">
+            <ul id="suggestions" class="suggestions-list" aria-label="Suggested cities">
+            </ul>
+        </div>
+    </div>
+
+    <main class="page-centered">
         <header class="header">
-            <h1 class="title">City Weather</h1>
-            <p class="subtitle">Simple, minimal weather lookup</p>
+            <h1 class="title">CITY WEATHER</h1>
+            <p class="subtitle">a simple weather lookup</p>
         </header>
 
-        <div class="layout">
-            <div class="content">
-                <section class="controls">
-                    <form action="" id="form" class="search">
-                        <input type="text" id="input" class="search-input" placeholder="Enter city name">
-                        <button type="submit" class="btn">Get Weather</button>
-                    </form>
-                </section>
+        <section class="controls glass-card">
+            <form action="" id="form" class="search">
+                <input type="text" id="input" class="search-input glass-input" placeholder="Enter city name"
+                    autocomplete="off">
+                <button type="submit" class="glass-btn btn-search pill-btn">Get Weather</button>
+            </form>
+        </section>
 
-                <section id="weatherBox" class="card weather-card">
-                    <div class="weather-head">
-                        <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
-                        <div>
-                            <h2 class="card-title">Current Weather</h2>
-                            <p id="location" class="location"></p>
-                        </div>
-                    </div>
-
-                    <p id="weather-description" class="desc"></p>
-                    <div class="row">
-                        <p id="temperature" class="temp"></p>
-                        <p id="humidity" class="hum"></p>
-                    </div>
-                </section>
+        <section id="weatherBox" class="glass-card weather-card fade-in">
+            <div class="weather-head">
+                <div id="weather-icon" class="weather-icon glass-icon" aria-hidden="true">☀️</div>
+                <div>
+                    <h2 class="card-title">Current Weather</h2>
+                    <p id="location" class="location"></p>
+                </div>
             </div>
 
-            <aside class="sidebar card">
-                <h3 class="suggest-title">Suggested Cities</h3>
-                <ul id="suggestions" class="suggestions" aria-label="Suggested cities">
-                    <!-- JS will populate suggestions -->
-                </ul>
-            </aside>
-        </div>
+            <p id="weather-description" class="desc"></p>
+            <div class="row">
+                <p id="temperature" class="temp"></p>
+                <p id="humidity" class="hum"></p>
+            </div>
+
+            <div id="advice-box" class="advice-box">
+                <span class="advice-label">What to Wear:</span>
+                <p id="advice-text" class="advice-text"></p>
+            </div>
+        </section>
+
+        <section id="forecastBox" class="glass-card forecast-card fade-in">
+            <h3 class="forecast-title">5-Day Forecast</h3>
+            <div id="forecast-list" class="forecast-list">
+            </div>
+        </section>
 
         <footer class="footer">&copy; City Weather Dashboard</footer>
     </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>
